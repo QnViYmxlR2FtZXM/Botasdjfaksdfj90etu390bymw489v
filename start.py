@@ -109,7 +109,7 @@ async def on_message(message):
 		if message.author.server_permissions.administrator:
 			
 			global botmsg
-
+			global votacao_a
 		
 			votacao = str(message.content[6:])
 		
@@ -126,6 +126,38 @@ async def on_message(message):
 			emoji_2 = 0
 			
 			await client.delete_message(message)
+			
+	if message.content.lower().startswith("$encerrarvotacao"):
+		
+		if message.author.server_permissions.administrator:
+			
+			if emoji_1 > emoji_2:
+				
+				emoji_1 = 0
+				emoji_2 = 0
+				
+				encerramento_a = "** Votacao: " + votacao_a + "\n\n" + "Foi aprovada com sucesso!" + "**"
+				
+
+				embed = discord.Embed(title="** Votacao Encerrada! **", description=encerramento_a, color=0xff00ff)
+				botmsg = await client.send_message(message.channel, embed=embed)
+				
+				await client.delete_message(message)
+			
+			
+			else:
+			
+				emoji_1 = 0
+				emoji_2 = 0
+				
+				encerramento_a = "** Votacao: " + votacao_a + "\n\n" + "Foi negada com sucesso '-'!" + "**"
+				
+
+				embed = discord.Embed(title="** Votacao Encerrada! **", description=encerramento_a, color=0xff00ff)
+				botmsg = await client.send_message(message.channel, embed=embed)
+				
+				await client.delete_message(message)
+
 			
 
 	else:

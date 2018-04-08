@@ -327,6 +327,14 @@ async def on_message(message):
 			embed = discord.Embed(title="** AVAST DETECTOR DE PALAVROES **", description=palava, color=0x00ff00)
 			await client.send_message(message.channel, embed=embed)
 			await client.delete_message(message)
+			
+		elif "FILHA DA PUTA".lower() in frase:
+		
+			palava = "**" + str(message.author) + " TUTUTU UM PALAVRAO FOI DETECTADO" + "**"
+			
+			embed = discord.Embed(title="** AVAST DETECTOR DE PALAVROES **", description=palava, color=0x00ff00)
+			await client.send_message(message.channel, embed=embed)
+			await client.delete_message(message)
 
 	
 

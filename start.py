@@ -362,7 +362,6 @@ async def on_message(message):
 	
 @client.event
 async def on_reaction_add(reaction, user):
-	if message.author.server_permissions.administrator:
 		
 		msg = reaction.message
 		
@@ -373,8 +372,6 @@ async def on_reaction_add(reaction, user):
 	
 @client.event
 async def on_reaction_remove(reaction, user):
-	
-	if message.author.server_permissions.administrator:
 		
 		msg = reaction.message
 		

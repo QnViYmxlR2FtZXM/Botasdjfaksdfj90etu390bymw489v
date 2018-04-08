@@ -46,7 +46,7 @@ async def on_message(message):
 
 	if message.content.lower().startswith("$ajuda"):
 	
-		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n $embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n\nMODULOS:\n\nANTI-FLOOD (BLOQUEADA FRASES COM MAIS DE 1200 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
+		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n $embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n\nMODULOS:\n\nANTI-FLOOD (BLOQUEADA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
 		await client.send_message(message.author, embed=embed)
 		await client.delete_message(message)
 
@@ -106,7 +106,7 @@ async def on_message(message):
 	
 		frase = message.content.lower()
 		
-		if frase.count("") >= 1200:
+		if frase.count("") >= 800:
 			
 			palava = "**" + " MANERA AI O " + str(message.author) + " " + str(frase.count("")) + " CARACTERES ..." + "**"
 			

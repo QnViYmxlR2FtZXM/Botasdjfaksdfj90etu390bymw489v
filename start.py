@@ -107,6 +107,8 @@ async def on_message(message):
 	if message.content.lower().startswith("$votar"):
 		
 		if message.author.server_permissions.administrator:
+			
+			global botmsg
 		
 			votacao = str(message.content[6:])
 		
@@ -351,7 +353,6 @@ async def on_message(message):
 			await client.send_message(message.channel, embed=embed)
 			await client.delete_message(message)
 			
-	global botmsg
 	global msg_id
 	msg_id = botmsg.id
 	global msg_user

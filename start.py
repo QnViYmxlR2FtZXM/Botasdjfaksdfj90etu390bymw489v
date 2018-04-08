@@ -11,7 +11,6 @@ os.system("cls")
 @client.event
 async def on_ready():
 
-	await client.send_message(discord.Object("426087124593278988"), "**VROTEI PRA PUDER DAR UMAS CENSURAS HEHE**")
 	await client.change_presence(game=discord.Game(name='$ajuda = Comandos'))
 	print("")
 	print("Bubble Bot Iniciado!")

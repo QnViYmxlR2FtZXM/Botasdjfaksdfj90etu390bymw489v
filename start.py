@@ -8,6 +8,9 @@ os.system("title Bubble Bot (CONSOLE)")
 os.system("color c")
 os.system("cls")
 
+msg_id = "
+msg_user = ""
+
 @client.event
 async def on_ready():
 
@@ -46,7 +49,7 @@ async def on_message(message):
 
 	if message.content.lower().startswith("$ajuda"):
 	
-		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n $embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n\nMODULOS:\n\nANTI-FLOOD (BLOQUEADA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
+		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n$embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n$votar [votacao] = Cria uma votacao (apenas para cargos administradores)\nMODULOS:\n\nANTI-FLOOD (BLOQUEA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
 		await client.send_message(message.author, embed=embed)
 		await client.delete_message(message)
 
@@ -101,7 +104,20 @@ async def on_message(message):
 		await client.send_message(message.channel, mensagem_a)
 		await client.delete_message(message)
 		
+	if message.content.lower().startswith("$votar"):
 		
+		if message.author.server_permissions.administrator:
+		
+			votacao = str(message.content[6:])
+		
+			votacao_a = "**" + "Votacao aberta por:" + str(message.author) + "\n\n" + "Assunto: __" + votacao + "__" + "\n\n" + "**"
+		
+			embed = discord.Embed(title="** Votacao! **", description=votacao_a, color=0xff00ff)
+			botmsg = await client.send_message(message.channel, embed=embed)
+			await client.add_reaction(botmsg, ":white_check_mark:")
+			await client.add_reaction(botmsg, ":x:")
+			
+
 	else:
 	
 		frase = message.content.lower()
@@ -334,8 +350,35 @@ async def on_message(message):
 			embed = discord.Embed(title="** AVAST DETECTOR DE PALAVROES **", description=palava, color=0x00ff00)
 			await client.send_message(message.channel, embed=embed)
 			await client.delete_message(message)
+			
+	global msg_id
+	msg_id = botmsg.id
+	global msg_user
+	msg_user = message.author
 
 	
+@client.event
+async def on_reaction_add(reaction, user):
+	if message.author.server_permissions.administrator:
+		
+		msg = reaction.message
+		
+		if reaction.emoji == ":white_check_mark:" and msg.id == msg_id:
+			print("teste")
+		if reaction.emoji == ":white_check_mark:" and msg.id == msg_id:
+			print("teste2")
+	
+@client.event
+async def on_reaction_remove(reaction, user):
+	
+	if message.author.server_permissions.administrator:
+		
+		msg = reaction.message
+		
+		if reaction.emoji == ":white_check_mark:" and msg.id == msg_id:
+			print("teste-")
+		if reaction.emoji == ":white_check_mark:" and msg.id == msg_id:
+			print("teste2-")
 
 
 client.run("NDMyMzA2OTQ5ODg3ODg1MzEz.DarYxQ.5gSmC0ajY2G6Ul8gUMbFL4yyllo")

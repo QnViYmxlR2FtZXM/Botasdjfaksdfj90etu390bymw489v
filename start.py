@@ -49,7 +49,7 @@ async def on_message(message):
 
 	if message.content.lower().startswith("$ajuda"):
 	
-		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n$embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n$votar [votacao] = Cria uma votacao (apenas para cargos administradores)\nMODULOS:\n\nANTI-FLOOD (BLOQUEA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
+		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n$embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n$votar [votacao] = Cria uma votacao (apenas para cargos administradores)\n$encerrarvotacao = Encerrar Votacao Atual (apenas para cargos administradores)\n\nMODULOS:\n\nANTI-FLOOD (BLOQUEA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
 		await client.send_message(message.author, embed=embed)
 		await client.delete_message(message)
 
@@ -145,7 +145,7 @@ async def on_message(message):
 				await client.delete_message(message)
 			
 			
-			else:
+			elif emoji_2 > emoji_1:
 			
 				emoji_1 = 0
 				emoji_2 = 0
@@ -158,7 +158,18 @@ async def on_message(message):
 				
 				await client.delete_message(message)
 
+			elif emoji_2 == emoji_1:
 			
+				emoji_1 = 0
+				emoji_2 = 0
+				
+				encerramento_a = "** Votacao: " + votacao_a + "\n\n" + "Caramba houve um empate!" + "**"
+				
+
+				embed = discord.Embed(title="** Votacao Encerrada! **", description=encerramento_a, color=0xff00ff)
+				botmsg = await client.send_message(message.channel, embed=embed)
+				
+				await client.delete_message(message)
 
 	else:
 	

@@ -365,12 +365,7 @@ async def on_message(message):
 	msg_id = botmsg.id
 	global msg_user
 	msg_user = message.author
-	
-	global emoji_1
-	global emoji_2
-		
-	emoji_1 = 0
-	emoji_2 = 0
+
 	
 	
 	

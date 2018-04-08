@@ -351,11 +351,13 @@ async def on_message(message):
 			await client.send_message(message.channel, embed=embed)
 			await client.delete_message(message)
 			
+	global botmsg
 	global msg_id
 	msg_id = botmsg.id
 	global msg_user
 	msg_user = message.author
-
+	
+	
 	
 @client.event
 async def on_reaction_add(reaction, user):

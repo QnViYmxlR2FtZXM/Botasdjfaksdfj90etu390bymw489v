@@ -106,7 +106,7 @@ async def on_message(message):
 	
 		frase = message.content.lower()
 		
-		if frase.count("") >= 1200:
+		if frase.count("") >= 800:
 			
 			palava = "**" + " MANERA AI O " + str(message.author) + " " + str(frase.count("")) + " CARACTERES ..." + "**"
 			
@@ -114,7 +114,6 @@ async def on_message(message):
 			await client.send_message(message.channel, embed=embed)
 			await client.delete_message(message)
 			
-			print(frase.count)
 		
 		if "PORRA".lower() in frase:
 		

@@ -116,8 +116,8 @@ async def on_message(message):
 		
 			embed = discord.Embed(title="** Votacao! **", description=votacao_a, color=0xff00ff)
 			botmsg = await client.send_message(message.channel, embed=embed)
-			await client.add_reaction(botmsg, ":white_check_mark:")
-			await client.add_reaction(botmsg, ":x:")
+			await client.add_reaction(botmsg, "✅")
+			await client.add_reaction(botmsg, "❎")
 			
 
 	else:

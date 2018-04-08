@@ -8,7 +8,7 @@ os.system("title Bubble Bot (CONSOLE)")
 os.system("color c")
 os.system("cls")
 
-msg_id = "
+msg_id = ""
 msg_user = ""
 
 @client.event

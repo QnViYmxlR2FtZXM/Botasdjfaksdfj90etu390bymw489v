@@ -136,7 +136,7 @@ async def on_message(message):
 				emoji_1 = 0
 				emoji_2 = 0
 				
-				encerramento_a = "** Votacao: " + votacao_a + "\n\n" + "Foi aprovada com sucesso!" + "**"
+				encerramento_a = "** Votacao: **" + "**" + votacao_a + "**" + "\n\n" + "**Foi aprovada com sucesso!**"
 				
 
 				embed = discord.Embed(title="** Votacao Encerrada! **", description=encerramento_a, color=0xff00ff)

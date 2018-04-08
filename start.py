@@ -109,6 +109,7 @@ async def on_message(message):
 		if message.author.server_permissions.administrator:
 			
 			global botmsg
+
 		
 			votacao = str(message.content[6:])
 		
@@ -118,6 +119,13 @@ async def on_message(message):
 			botmsg = await client.send_message(message.channel, embed=embed)
 			await client.add_reaction(botmsg, "✅")
 			await client.add_reaction(botmsg, "❎")
+			
+			global emoji_1
+			emoji_1 = 0
+			global emoji_2
+			emoji_2 = 0
+			
+			await client.delete_message(message)
 			
 
 	else:
@@ -358,27 +366,53 @@ async def on_message(message):
 	global msg_user
 	msg_user = message.author
 	
+	global emoji_1
+	global emoji_2
+		
+	emoji_1 = 0
+	emoji_2 = 0
+	
 	
 	
 @client.event
 async def on_reaction_add(reaction, user):
 		
+		global emoji_1
+		global emoji_2
+		
+		
 		msg = reaction.message
 		
 		if reaction.emoji == "✅" and msg.id == msg_id:
-			print("teste")
+			
+			emoji_1 = emoji_1 + 1
+			print(emoji_1)
+			
 		if reaction.emoji == "❎" and msg.id == msg_id:
-			print("teste2")
+			
+			emoji_2 = emoji_2 + 1
+			print(emoji_2)
+			
 	
 @client.event
 async def on_reaction_remove(reaction, user):
+	
+		global emoji_1
+		global emoji_2
+	
 		
 		msg = reaction.message
 		
 		if reaction.emoji == "✅" and msg.id == msg_id:
-			print("teste-")
+			
+			emoji_1 = emoji_1 - 1
+			print(emoji_1)
+			
+			
 		if reaction.emoji == "❎" and msg.id == msg_id:
-			print("teste2-")
+
+			emoji_2 = emoji_2 - 1
+			print(emoji_2)
 
 
 client.run("NDMyMzA2OTQ5ODg3ODg1MzEz.DarYxQ.5gSmC0ajY2G6Ul8gUMbFL4yyllo")

@@ -32,6 +32,8 @@ async def on_message(message):
 		embed = discord.Embed(title="** Nova Denuncia **", description=denuncia_texto, color=0xff0000)
 		
 		await client.send_message(discord.Object("432189181457072129"), embed=embed)
+		await client.send_message(message.author, "Usuario denunciado com sucesso!")
+		await client.send_message(message.author, "Um membro da staff ira ver a denuncia e julgala!")
 		
 	if message.content.lower().startswith("$youtuber"):
 	
@@ -45,7 +47,7 @@ async def on_message(message):
 
 	if message.content.lower().startswith("$ajuda"):
 	
-		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar (nome) (motivo) = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber **", color=0xff0000)
+		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n $embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores) **", color=0xff0000)
 		await client.send_message(message.author, embed=embed)
 		await client.delete_message(message)
 

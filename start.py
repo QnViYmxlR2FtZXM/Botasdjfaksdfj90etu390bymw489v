@@ -365,7 +365,7 @@ async def on_reaction_add(reaction, user):
 		
 		msg = reaction.message
 		
-		if reaction.emoji == "✅:" and msg.id == msg_id:
+		if reaction.emoji == "✅" and msg.id == msg_id:
 			print("teste")
 		if reaction.emoji == "❎" and msg.id == msg_id:
 			print("teste2")

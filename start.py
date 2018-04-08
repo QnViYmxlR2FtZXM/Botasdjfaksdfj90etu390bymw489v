@@ -366,9 +366,9 @@ async def on_reaction_add(reaction, user):
 		
 		msg = reaction.message
 		
-		if reaction.emoji == ":white_check_mark:" and msg.id == msg_id:
+		if reaction.emoji == "✅:" and msg.id == msg_id:
 			print("teste")
-		if reaction.emoji == ":white_check_mark:" and msg.id == msg_id:
+		if reaction.emoji == "❎" and msg.id == msg_id:
 			print("teste2")
 	
 @client.event
@@ -378,9 +378,9 @@ async def on_reaction_remove(reaction, user):
 		
 		msg = reaction.message
 		
-		if reaction.emoji == ":white_check_mark:" and msg.id == msg_id:
+		if reaction.emoji == "✅" and msg.id == msg_id:
 			print("teste-")
-		if reaction.emoji == ":white_check_mark:" and msg.id == msg_id:
+		if reaction.emoji == "❎" and msg.id == msg_id:
 			print("teste2-")
 
 

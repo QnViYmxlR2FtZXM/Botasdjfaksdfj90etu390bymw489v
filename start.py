@@ -31,8 +31,8 @@ async def on_message(message):
 		embed = discord.Embed(title="** Nova Denuncia **", description=denuncia_texto, color=0xff0000)
 		
 		await client.send_message(discord.Object("432189181457072129"), embed=embed)
-		await client.send_message(message.author, "Usuario denunciado com sucesso!")
-		await client.send_message(message.author, "Um membro da staff ira ver a denuncia e julgala!")
+		await client.send_message(message.author, "**Usuario denunciado com sucesso!**")
+		await client.send_message(message.author, "**Um membro da staff ira ver a denuncia e julgala!**")
 		
 	if message.content.lower().startswith("$youtuber"):
 	

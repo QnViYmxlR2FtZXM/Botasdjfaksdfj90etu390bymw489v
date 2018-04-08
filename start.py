@@ -60,6 +60,43 @@ async def on_message(message):
 			embed = discord.Embed(title=titulo, description=mensagem_embed, color=0xff0000)
 			await client.send_message(message.channel, embed=embed)
 			await client.delete_message(message)
+			
+	if message.content.lower().startswith("$qualidade"):
+		
+		texto_qualidade = message.content[11:]
+		texto_qualidade = texto_qualidade.upper()
+		
+		texto_qualidade = texto_qualidade.replace("A", " A ")
+		texto_qualidade = texto_qualidade.replace("B", " B ")
+		texto_qualidade = texto_qualidade.replace("C", " C ")
+		texto_qualidade = texto_qualidade.replace("D", " D ")
+		texto_qualidade = texto_qualidade.replace("E", " E ")
+		texto_qualidade = texto_qualidade.replace("F", " F ")
+		texto_qualidade = texto_qualidade.replace("G", " G ")
+		texto_qualidade = texto_qualidade.replace("H", " H ")
+		texto_qualidade = texto_qualidade.replace("I", " I ")
+		texto_qualidade = texto_qualidade.replace("J", " J ")
+		texto_qualidade = texto_qualidade.replace("K", " K ")
+		texto_qualidade = texto_qualidade.replace("L", " L ")
+		texto_qualidade = texto_qualidade.replace("M", " M ")
+		texto_qualidade = texto_qualidade.replace("N", " N ")
+		texto_qualidade = texto_qualidade.replace("O", " O ")
+		texto_qualidade = texto_qualidade.replace("P", " P ")
+		texto_qualidade = texto_qualidade.replace("Q", " Q ")
+		texto_qualidade = texto_qualidade.replace("R", " R ")
+		texto_qualidade = texto_qualidade.replace("S", " S ")
+		texto_qualidade = texto_qualidade.replace("T", " T ")
+		texto_qualidade = texto_qualidade.replace("U", " U ")
+		texto_qualidade = texto_qualidade.replace("V", " V ")
+		texto_qualidade = texto_qualidade.replace("W", " W ")
+		texto_qualidade = texto_qualidade.replace("X", " X ")
+		texto_qualidade = texto_qualidade.replace("Y", " Y ")
+		texto_qualidade = texto_qualidade.replace("Z", " Z ")
+		
+		mensagem_a = str(message.author) + " : " + texto_qualidade
+		
+		await client.send_message(message.channel, mensagem_a)
+		
 		
 	else:
 	

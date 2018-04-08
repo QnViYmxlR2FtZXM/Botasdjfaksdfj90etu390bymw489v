@@ -113,6 +113,8 @@ async def on_message(message):
 			embed = discord.Embed(title="** FLOOD DETECTOR **", description=palava, color=0x00ff00)
 			await client.send_message(message.channel, embed=embed)
 			await client.delete_message(message)
+			
+			print(frase.count)
 		
 		if "PORRA".lower() in frase:
 		

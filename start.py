@@ -66,6 +66,8 @@ async def on_message(message):
 		texto_qualidade = message.content[11:]
 		texto_qualidade = texto_qualidade.upper()
 		
+		texto_qualidade = texto_qualidade.replace(" ", "  ")
+		
 		texto_qualidade = texto_qualidade.replace("A", " A ")
 		texto_qualidade = texto_qualidade.replace("B", " B ")
 		texto_qualidade = texto_qualidade.replace("C", " C ")
@@ -93,7 +95,7 @@ async def on_message(message):
 		texto_qualidade = texto_qualidade.replace("Y", " Y ")
 		texto_qualidade = texto_qualidade.replace("Z", " Z ")
 		
-		mensagem_a = str(message.author) + " : " + texto_qualidade
+		mensagem_a = "@" + str(message.author) + " : " + texto_qualidade
 		
 		await client.send_message(message.channel, mensagem_a)
 		

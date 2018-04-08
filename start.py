@@ -106,9 +106,9 @@ async def on_message(message):
 	
 		frase = message.content.lower()
 		
-		if frase.count("") >= 1500:
+		if frase.count("") >= 1200:
 			
-			palava = "**" + str(message.author) + " MANERA NO FLOOD AI O" + str(message.author) + "**"
+			palava = "**" + str(message.author) + " MANERA AI O " + str(message.author) + " " + int(frase.count("")) + " CARACTERES ..."
 			
 			embed = discord.Embed(title="** FLOOD DETECTOR **", description=palava, color=0x00ff00)
 			await client.send_message(message.channel, embed=embed)

@@ -99,6 +99,7 @@ async def on_message(message):
 		mensagem_a = "**" + str(message.author) + " : " + texto_qualidade + "**"
 		
 		await client.send_message(message.channel, mensagem_a)
+		await client.delete_message(message)
 		
 		
 	else:

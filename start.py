@@ -49,7 +49,7 @@ async def on_message(message):
 
 	if message.content.lower().startswith("$ajuda"):
 	
-		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n$embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n$votar [votacao] = Cria uma votacao (apenas para cargos administradores)\n$encerrarvotacao = Encerrar votacao atual (apenas para cargos administradores)\n$parceria = Mostra requisitos para parceria\n\nMODULOS:\n\nANTI-FLOOD (BLOQUEA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
+		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n$embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n$votar [votacao] = Cria uma votacao (apenas para cargos administradores)\n$encerrarvotacao = Encerrar votacao atual (apenas para cargos administradores)\n$parceria = Requisitos para parceria\n\nMODULOS:\n\nANTI-FLOOD (BLOQUEA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
 		await client.send_message(message.author, embed=embed)
 		await client.delete_message(message)
 
@@ -171,10 +171,10 @@ async def on_message(message):
 				
 				await client.delete_message(message)
 		
-		if message.content.lower().startswith("$parceria"):
+	if message.content.lower().startswith("$parceria"):
 			
-			embed = discord.Embed(title="** Requisitos Parceria **", description="**Requisitos para parceria com o servidor discord.\n\n\n-Canal no youtube com no minímo 100 inscritos\n-O grupo do seu discord tem que ter no minímo 20 membros\n\n-Ser ativo no youtube\n**", color=0x0000ff)
-			await client.send_message(message.channel, embed=embed)
+		embed = discord.Embed(title="** Requisitos Parceria **", description="**Requisitos para parceria com o servidor discord.\n\n\n-Canal no youtube com no minímo 100 inscritos\n-O grupo do seu discord tem que ter no minímo 20 membros\n\n-Ser ativo no youtube\n**", color=0x0000ff)
+		await client.send_message(message.channel, embed=embed)
 
 	else:
 	

@@ -180,8 +180,8 @@ async def on_message(message):
 
 		if message.author.server_permissions.administrator:
 		
-			usuario = messsage.mentions[0]
-			motivo = messsage.mentions[1]
+			usuario = message.mentions[0]
+			motivo = message.mentions[1]
 		
 			await client.ban(usuario)
 			await client.send_message(discord.Object("426098297934184448"),"Usuario banido:{}\nBanido por:{}\nMotivo:{}",format(usuario, message.author, motivo))

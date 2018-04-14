@@ -175,7 +175,23 @@ async def on_message(message):
 			
 		embed = discord.Embed(title="** Requisitos Parceria **", description="**Requisitos para parceria com o servidor discord.\n\n\n-Canal no youtube com no minímo 100 inscritos\n-O grupo do seu discord tem que ter no minímo 20 membros\n-Ser ativo no youtube\n**", color=0x0000ff)
 		await client.send_message(message.channel, embed=embed)
+		
+	if message.content.lower().startswith("$ban"):
 
+	if message.author.server_permissions.administrator:
+		
+		usuario = messsage.mentions[0]
+		motivo = messsage.mentions[1]
+		
+		await client.ban(usuario)
+		await client.send_message(discord.Object("426098297934184448"),"Usuario banido:{}\nBanido por:{}\nMotivo:{}",format(usuario, message.author, motivo))
+		await.delete_message(message)
+		
+	
+	#426098297934184448
+	#await client.ban(usuario,delete_message_days=1)
+	
+	
 	else:
 	
 		frase = message.content.lower()

@@ -178,18 +178,15 @@ async def on_message(message):
 		
 	if message.content.lower().startswith("$ban"):
 
-	if message.author.server_permissions.administrator:
+		if message.author.server_permissions.administrator:
 		
-		usuario = messsage.mentions[0]
-		motivo = messsage.mentions[1]
+			usuario = messsage.mentions[0]
+			motivo = messsage.mentions[1]
 		
-		await client.ban(usuario)
-		await client.send_message(discord.Object("426098297934184448"),"Usuario banido:{}\nBanido por:{}\nMotivo:{}",format(usuario, message.author, motivo))
-		await.delete_message(message)
+			await client.ban(usuario)
+			await client.send_message(discord.Object("426098297934184448"),"Usuario banido:{}\nBanido por:{}\nMotivo:{}",format(usuario, message.author, motivo))
+			await.delete_message(message)
 		
-	
-	#426098297934184448
-	#await client.ban(usuario,delete_message_days=1)
 	
 	
 	else:

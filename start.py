@@ -173,7 +173,7 @@ async def on_message(message):
 		
 	if message.content.lower().startswith("$parceria"):
 			
-		embed = discord.Embed(title="** Requisitos Parceria **", description="**Requisitos para parceria com o servidor discord.\n\n\n-Canal no youtube com no minímo 100 inscritos\n-O grupo do seu discord tem que ter no minímo 20 membros\n\n-Ser ativo no youtube\n**", color=0x0000ff)
+		embed = discord.Embed(title="** Requisitos Parceria **", description="**Requisitos para parceria com o servidor discord.\n\n\n-Canal no youtube com no minímo 100 inscritos\n-O grupo do seu discord tem que ter no minímo 20 membros\n-Ser ativo no youtube\n**", color=0x0000ff)
 		await client.send_message(message.channel, embed=embed)
 
 	else:

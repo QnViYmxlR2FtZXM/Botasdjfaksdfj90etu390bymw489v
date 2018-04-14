@@ -183,7 +183,8 @@ async def on_message(message):
 			usuario = message.mentions[0]
 		
 			await client.ban(usuario)
-			await client.send_message(discord.Object("426098297934184448"),"Usuario banido:{}\nBanido por:{}",format(usuario, message.author))
+			await client.send_message(discord.Object("426098297934184448"), "Usuario banido:{}".format(usuario))
+			await client.send_message(discord.Object("426098297934184448"), "Banido pelo admin:{}".format(message.author))
 			await delete_message(message)
 		
 	

@@ -182,7 +182,7 @@ async def on_message(message):
 		
 			usuario = message.mentions[0]
 		
-			await client.send_message(usuario, "** Bem eu nao consigo ler mentes...\nMais uma __melda__ que voce fez eu sei!\nPor isso eu me diverti banindo voce :yum: ")
+			await client.send_message(usuario, "** Bem eu nao consigo ler mentes...\nMais uma __melda__ que voce fez eu sei!\nPor isso eu me diverti banindo voce :yum: **")
 		
 			await client.ban(usuario)
 			await client.send_message(discord.Object("438020809047408661"), "**Usuario banido:{}**".format(usuario))

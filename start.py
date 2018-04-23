@@ -182,7 +182,7 @@ async def on_message(message):
 		
 			usuario = message.mentions[0]
 			
-			if "CentenoBR#0405" in str(message.author):
+			if "CentenoBR#0405" in str(message.content[5:]):
 		
 				embed = discord.Embed(title="** FATAL ERROR 404 406 789 102 108 123 **", description="**FATAL ERROR 404 591 23 101 123 IMPOSSIVEL BANIR ESTE CARA ERROR 402 303 ELE E MUITO INTELIGENTE ERROR 10101010 404 4010101**", color=0xff0000)
 				await client.send_message(message.channel, embed=embed)

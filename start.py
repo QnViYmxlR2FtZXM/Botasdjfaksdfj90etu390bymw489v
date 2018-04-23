@@ -182,12 +182,6 @@ async def on_message(message):
 		
 			usuario = message.mentions[0]
 			
-			if "CentenoBR".lower() in str(message.content[5:]).lower():
-		
-				embed = discord.Embed(title="** FATAL ERROR 404 406 789 102 108 123 **", description="**FATAL ERROR 404 591 23 101 123 IMPOSSIVEL BANIR ESTE CARA ERROR 402 303 ELE E MUITO INTELIGENTE ERROR 10101010 404 4010101**", color=0xff0000)
-				await client.send_message(message.channel, embed=embed)
-		
-				
 			await client.send_message(usuario, "** Bem eu nao consigo ler mentes...\nMais uma melda que voce fez eu sei!\nPor isso eu me diverti banindo voce :yum: **")
 		
 			await client.ban(usuario)

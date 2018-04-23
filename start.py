@@ -49,7 +49,7 @@ async def on_message(message):
 
 	if message.content.lower().startswith("$ajuda"):
 	
-		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n$embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n$votar [votacao] = Cria uma votacao (apenas para cargos administradores)\n$encerrarvotacao = Encerrar votacao atual (apenas para cargos administradores)\n$parceria = Requisitos para parceria\n\nMODULOS:\n\nANTI-FLOOD (BLOQUEA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
+		embed = discord.Embed(title="** Ajuda **", description="**Comandos:\n\n$denunciar [nome] [motivo] = Denunciar Usuario\n$form = Formulario para Staffs\n$youtuber = Requisitos para cargo Youtuber\n$qualidade [mensagem] = Mandar mensagens de qualidade\n$embed [mensagem] Mandar mensagens destacadas (apenas para cargos administradores)\n$votar [votacao] = Cria uma votacao (apenas para cargos administradores)\n$encerrarvotacao = Encerrar votacao atual (apenas para cargos administradores)\n$parceria = Requisitos para parceria\n$ip = Ip do servidor\n$twitter = Twitter do servidor\n$ban [usuario] = Bane usuario do servidor (apenas para cargos administradores)\mMODULOS:\n\nANTI-FLOOD (BLOQUEA FRASES COM MAIS DE 800 CARACTERES)\nANTI-PALAVROES (BLOQUEA PALAVROES)**", color=0xff0000)
 		await client.send_message(message.author, embed=embed)
 		await client.delete_message(message)
 
@@ -182,10 +182,24 @@ async def on_message(message):
 		
 			usuario = message.mentions[0]
 		
+			await client.send_message(usuario, "** Bem eu nao consigo ler mentes...\nMais uma merda que voce fez eu sei!\nPor isso eu me diverti banindo voce :yum: ")
+		
 			await client.ban(usuario)
-			await client.send_message(discord.Object("426098297934184448"), "Usuario banido:{}".format(usuario))
-			await client.send_message(discord.Object("426098297934184448"), "Banido pelo admin:{}".format(message.author))
+			await client.send_message(discord.Object("426098297934184448"), "**Usuario banido:{}**".format(usuario))
+			await client.send_message(discord.Object("426098297934184448"), "**Banido pelo admin:{}**".format(message.author))
 			await delete_message(message)
+			
+			
+		
+	if message.content.lower().startswith("$ip"):
+			
+		embed = discord.Embed(title="** Ip do Servidor **", description="**IP:158.69.12.206:25588 -- Minecraft 1.8 : Pirata/Original**", color=0x660066)
+		await client.send_message(message.channel, embed=embed)
+		
+	if message.content.lower().startswith("$twitter"):
+			
+		embed = discord.Embed(title="** Twitter do Servidor **", description="** https://twitter.com/BubbleGamesMC?s=09 **", color=0x0066ff)
+		await client.send_message(message.channel, embed=embed)
 		
 	
 	

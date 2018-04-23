@@ -182,20 +182,18 @@ async def on_message(message):
 		
 			usuario = message.mentions[0]
 			
-			if "CentenoBR" in usuario:
+			if "CentenoBR#0405" in str(message.author):
 		
 				embed = discord.Embed(title="** FATAL ERROR 404 406 789 102 108 123 **", description="**FATAL ERROR 404 591 23 101 123 IMPOSSIVEL BANIR ESTE CARA ERROR 402 303 ELE E MUITO INTELIGENTE ERROR 10101010 404 4010101**", color=0xff0000)
 				await client.send_message(message.channel, embed=embed)
 		
-		
-			else:
 				
-				await client.send_message(usuario, "** Bem eu nao consigo ler mentes...\nMais uma melda que voce fez eu sei!\nPor isso eu me diverti banindo voce :yum: **")
+			await client.send_message(usuario, "** Bem eu nao consigo ler mentes...\nMais uma melda que voce fez eu sei!\nPor isso eu me diverti banindo voce :yum: **")
 		
-				await client.ban(usuario)
-				await client.send_message(discord.Object("438020809047408661"), "**Usuario banido:{}**".format(usuario))
-				await client.send_message(discord.Object("438020809047408661"), "**Banido pelo admin:{}**".format(message.author))
-				await delete_message(message)
+			await client.ban(usuario)
+			await client.send_message(discord.Object("438020809047408661"), "**Usuario banido:{}**".format(usuario))
+			await client.send_message(discord.Object("438020809047408661"), "**Banido pelo admin:{}**".format(message.author))
+			await delete_message(message)
 			
 			
 		

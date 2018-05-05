@@ -279,7 +279,7 @@ async def on_message(message):
 				
 					
 					try:
-						ftp.cwd("loteria")]
+						ftp.cwd("loteria")
 					except:
 						pass
 				

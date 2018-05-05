@@ -19,8 +19,8 @@ async def on_ready():
 	ftp.connect("158.69.12.206", 21)
 	ftp.login("IspaiHd@outlook.com.2646", "94Qr7Wjcd6")
 	
-	ftp.dir()
-
+	ftp.cwd("bot")
+	
 	await client.change_presence(game=discord.Game(name='$ajuda = Comandos'))
 	print("")
 	print("Bubble Bot Iniciado!")
@@ -208,7 +208,60 @@ async def on_message(message):
 		embed = discord.Embed(title="** Twitter do Servidor **", description="** https://twitter.com/BubbleGamesMC?s=09 **", color=0x0066ff)
 		await client.send_message(message.channel, embed=embed)
 		
+	if message.content.lower().startswith("$loteria"):
+		
+		try:
+			ftp.connect("158.69.12.206", 21)
+			ftp.login("IspaiHd@outlook.com.2646", "94Qr7Wjcd6")
 	
+			ftp.cwd("bot")
+		
+			try:
+
+				ftp.retrbinary('RETR %s' % str(message.author), open(str(message.author), 'wb').write)
+				file = open(str(message.author), "r").read()
+				print(file)
+				
+			except:
+				
+				file = open(str(message.author), "w")
+				file.write(str(message.author))
+				file.close()
+				
+				file = open(str(message.author),'rb')   
+				file_v = "STOR " + str(message.author)
+				server.storbinary(file_v, file)
+				
+		
+		except:
+			
+			
+			try:
+
+				ftp.retrbinary('RETR %s' % str(message.author), open(str(message.author), 'wb').write)
+				file = open(str(message.author), "r").read()
+				print(file)
+				
+			except:
+				
+				file = open(str(message.author), "w")
+				file.write(str(message.author))
+				file.close()
+				
+				file = open(str(message.author),'rb')   
+				file_v = "STOR " + str(message.author)
+				server.storbinary(file_v, file)
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 	
 	else:
 	

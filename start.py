@@ -1,8 +1,10 @@
 import discord
 import asyncio
 import os
+import ftplib
 
 client = discord.Client()
+ftp = ftplib.FTP()
 
 os.system("title Bubble Bot (CONSOLE)")
 os.system("color c")
@@ -13,6 +15,12 @@ msg_user = ""
 
 @client.event
 async def on_ready():
+	
+	ftp.connect("158.69.12.206", 21)
+	ftp.login("IspaiHd@outlook.com.2646", "94Qr7Wjcd6")
+	
+	ftp.cwd("bot")
+	ftp.dir()
 
 	await client.change_presence(game=discord.Game(name='$ajuda = Comandos'))
 	print("")

@@ -223,7 +223,7 @@ async def on_message(message):
 				
 				ftp.cwd("loteria")
 				
-				ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual"), 'wb').write)
+				ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual", 'wb').write)
 				loteria_a = open("loteria.atual", "r").read()
 				
 				ftp.pwd()
@@ -247,7 +247,7 @@ async def on_message(message):
 				
 				ftp.cwd("loteria")
 				
-				ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual"), 'wb').write)
+				ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual", 'wb').write)
 				loteria_a = open("loteria.atual", "r").read()
 				
 				ftp.pwd()
@@ -276,7 +276,7 @@ async def on_message(message):
 				
 					ftp.cwd("loteria")
 				
-					ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual"), 'wb').write)
+					ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual", 'wb').write)
 					loteria_a = open("loteria.atual", "r").read()
 				
 					ftp.pwd()
@@ -300,7 +300,7 @@ async def on_message(message):
 				
 					ftp.cwd("loteria")
 				
-					ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual"), 'wb').write)
+					ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual", 'wb').write)
 					loteria_a = open("loteria.atual", "r").read()
 				
 					ftp.pwd()

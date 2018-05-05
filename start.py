@@ -219,18 +219,43 @@ async def on_message(message):
 			try:
 
 				ftp.retrbinary('RETR %s' % str(message.author), open(str(message.author), 'wb').write)
-				file = open(str(message.author), "r").read()
-				print(file)
+				author_loteria = open(str(message.author), "r").read()
+				
+				ftp.cwd("loteria")
+				
+				ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual"), 'wb').write)
+				loteria_a = open("loteria.atual", "r").read()
+				
+				ftp.pwd()
+				ftp.cwd("bot")
+				
+				embed = discord.Embed(title="** Loteria Atual **", description="**\n Descricao:{} **".format(loteria_a), color=0x7FFF00)
+				await client.send_message(message.channel, embed=embed)
+				
 				
 			except:
 				
 				file = open(str(message.author), "w")
-				file.write(str(message.author))
+				file.write("0")
 				file.close()
 				
 				file = open(str(message.author),'rb')   
 				file_v = "STOR " + str(message.author)
 				ftp.storbinary(file_v, file)
+				
+				author_loteria = open(str(message.author), "r").read()
+				
+				ftp.cwd("loteria")
+				
+				ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual"), 'wb').write)
+				loteria_a = open("loteria.atual", "r").read()
+				
+				ftp.pwd()
+				ftp.cwd("bot")
+				
+				embed = discord.Embed(title="** Loteria Atual **", description="**\n Descricao:{} **".format(loteria_a), color=0x7FFF00)
+				await client.send_message(message.channel, embed=embed)
+				
 				
 		
 		except:
@@ -244,13 +269,51 @@ async def on_message(message):
 				
 			except:
 				
-				file = open(str(message.author), "w")
-				file.write(str(message.author))
-				file.close()
+				try:
+
+					ftp.retrbinary('RETR %s' % str(message.author), open(str(message.author), 'wb').write)
+					author_loteria = open(str(message.author), "r").read()
 				
-				file = open(str(message.author),'rb')   
-				file_v = "STOR " + str(message.author)
-				ftp.storbinary(file_v, file)
+					ftp.cwd("loteria")
+				
+					ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual"), 'wb').write)
+					loteria_a = open("loteria.atual", "r").read()
+				
+					ftp.pwd()
+					ftp.cwd("bot")
+				
+					embed = discord.Embed(title="** Loteria Atual **", description="**\n Descricao:{} **".format(loteria_a), color=0x7FFF00)
+					await client.send_message(message.channel, embed=embed)
+				
+				
+				except:
+				
+					file = open(str(message.author), "w")
+					file.write("0")
+					file.close()
+				
+					file = open(str(message.author),'rb')   
+					file_v = "STOR " + str(message.author)
+					ftp.storbinary(file_v, file)
+				
+					author_loteria = open(str(message.author), "r").read()
+				
+					ftp.cwd("loteria")
+				
+					ftp.retrbinary('RETR %s' % "loteria.atual", open("loteria.atual"), 'wb').write)
+					loteria_a = open("loteria.atual", "r").read()
+				
+					ftp.pwd()
+					ftp.cwd("bot")
+				
+					embed = discord.Embed(title="** Loteria Atual **", description="**\n Descricao:{} **".format(loteria_a), color=0x7FFF00)
+					await client.send_message(message.channel, embed=embed)
+				
+				
+				
+
+				
+				
 			
 
 	

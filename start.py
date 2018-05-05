@@ -230,7 +230,7 @@ async def on_message(message):
 				
 				file = open(str(message.author),'rb')   
 				file_v = "STOR " + str(message.author)
-				server.storbinary(file_v, file)
+				ftp.storbinary(file_v, file)
 				
 		
 		except:
@@ -250,18 +250,9 @@ async def on_message(message):
 				
 				file = open(str(message.author),'rb')   
 				file_v = "STOR " + str(message.author)
-				server.storbinary(file_v, file)
+				ftp.storbinary(file_v, file)
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 	
 	else:
 	
